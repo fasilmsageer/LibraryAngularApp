@@ -13,6 +13,7 @@ import { DeleteBookComponent } from './delete-book/delete-book.component';
 import { IssueBooksComponent } from './issue-books/issue-books.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const myRoute=[
   {
@@ -64,7 +65,8 @@ const myRoute=[
     SearchBooksComponent,
     DeleteBookComponent,
     IssueBooksComponent,
-    EditBookComponent
+    EditBookComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
