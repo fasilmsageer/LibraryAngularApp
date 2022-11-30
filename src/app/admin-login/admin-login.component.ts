@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,6 +10,8 @@ export class AdminLoginComponent {
 
   username=""
   password=""
+
+  constructor(private router:Router){}
 
 
 
@@ -21,6 +24,8 @@ export class AdminLoginComponent {
     console.log(data)
 
     if (this.username=="admin" && this.password=="12345") {
+
+      this.router.navigate(['/bookentry'])
       alert("valid login")
       
     } else {
