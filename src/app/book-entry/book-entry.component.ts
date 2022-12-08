@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-book-entry',
@@ -17,6 +18,8 @@ export class BookEntryComponent {
   releasedyear=""
   price=""
 
+  constructor(private api:ApiService){}
+
 
   readValues=()=>
   {
@@ -32,6 +35,27 @@ export class BookEntryComponent {
       "price":this.price
     }
     console.log(data)
+
+    this.api.addbook(data).subscribe(
+      (response:any)=>{
+        console.log(response)
+        if (response.status=="success"){
+          this.title=""
+          this.image=""
+          this.author=""
+          this.description=""
+          this.publisher=""
+          this.language=""
+          this.distributer=""
+          this.releasedyear=""
+          this.price=""
+        } else{
+          alert("something went wrong")
+
+        }
+        
+      }
+    )
   }
 
 }
