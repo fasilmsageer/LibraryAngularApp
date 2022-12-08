@@ -24,8 +24,8 @@ export class UserLoginComponent {
     console.log(data)
 
     if (this.username=="user" && this.password=="54321"){
-      this.router.navigate(['/bookview'])
-      alert("login success")
+      this.router.navigate(['/searchbooks'])
+      
     } else {
       alert("login failed")
     }

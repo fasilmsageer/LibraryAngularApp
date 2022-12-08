@@ -26,7 +26,6 @@ export class AdminLoginComponent {
     if (this.username=="admin" && this.password=="12345") {
 
       this.router.navigate(['/bookentry'])
-      alert("valid login")
       
     } else {
       alert("invalid login")
