@@ -8,10 +8,22 @@ import { ApiService } from '../api.service';
 })
 export class SearchBooksComponent {
 
-  constructor(private api:ApiService){}
+  constructor(private api:ApiService){
+    
+
+    api.viewbook().subscribe(
+  
+      (response)=>{
+        this.searchdata=response;
+      }
+    )
+  
+  }
   
   title=""
   searchdata:any=[]
+
+  
 
   readsearch=()=>
   {
